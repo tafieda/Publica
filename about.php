@@ -154,7 +154,7 @@ while($row=mysqli_fetch_array($query))
 $query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
 while ($row=mysqli_fetch_array($query)) {
 ?>
-             
+
             <p><?php 
 $pt=$row['postdetails'];
               echo  (substr($pt,0,600) .'...');?></p>
@@ -182,9 +182,8 @@ $pt=$row['postdetails'];
             <div class="row justify-content-center">
               <div class="col-lg-6">
                 <h2 class="display-4">Our Team</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sint sed, fugit distinctio ad eius
-                  itaque deserunt doloribus harum excepturi laudantium sit officiis et eaque blanditiis. Dolore natus
-                  excepturi recusandae.</p>
+                <p>Publica is not funded by any big-name donors. Nobody is behind us pulling the strings and we're going
+                  to keep it that way.</p>
               </div>
             </div>
           </div>
