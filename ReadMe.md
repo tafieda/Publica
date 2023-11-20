@@ -1,6 +1,14 @@
 # Publica
 An online multimedia organisation with headquaters in Kano State, Nigeria. This is the official website project!!!.
 
+## Languages Used
+* HTML
+* PHP
+* MySql
+* JavaScript
+* Jquery
+* CSS
+
 ## Contribution
 We welcome any and all contributions! Here are some ways you can get started:
 
