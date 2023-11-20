@@ -1,3 +1,6 @@
+# Publica
+An online multimedia organisation with headquaters in Kano State, Nigeria. This is the official website project!!!.
+
 ## Contribution
 We welcome any and all contributions! Here are some ways you can get started:
 
