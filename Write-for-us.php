@@ -2,7 +2,7 @@
 include('includes/config.php');
 
 ?>
- 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@ while($row=mysqli_fetch_array($query))
 {
 
 ?>
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -60,7 +61,7 @@ $pt=$row['Description'];
   <!-- Navigation -->
   <?php include('includes/header.php');?>
 
-<?php 
+  <?php 
 function time_elapsed_string($datetime, $full = false){
   $now = new DateTime;
   $ago = new DateTime($datetime);
@@ -90,41 +91,52 @@ function time_elapsed_string($datetime, $full = false){
   return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 ?>
-<main id="main">
-<section id="contact" class="contact mb-5">
-<div class="container" data-aos="fade-up">
+  <main id="main">
+    <section id="contact" class="contact mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9" data-aos="fade-up">
 
-<?php 
+            <?php 
 $pagetype='Writeforus';
 $query=mysqli_query($con,"select PageTitle,Description from tblpages where PageName='$pagetype'");
 while($row=mysqli_fetch_array($query))
 {
 
 ?>
-<div class="row">
-<div class="col-lg-12 text-center mb-5">
- <h1 class="page-title"><?php echo htmlentities($row['PageTitle'])?></h1>
-</div>
-</div>
-<div class="row">
+            <div class="row">
+              <div class="col-lg-12 text-center mb-5">
+                <h1 class="page-title"><?php echo htmlentities($row['PageTitle'])?></h1>
+              </div>
+            </div>
+            <div class="row">
 
-<div class="col-lg-12 mb-5">
-
-
-
-
- <p><?php echo $row['Description'];?></p>
-
-</div>
-</div><!-- End Info Item -->
-<?php } ?>
-</div>
+              <div class="col-lg-12 mb-5">
 
 
 
-</section>
 
-</main><!-- End #main -->
+                <p><?php echo $row['Description'];?></p>
+
+              </div>
+            </div><!-- End Info Item -->
+            <?php } ?>
+          </div>
+
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <a href="https://clients.domainking.ng/aff.php?aff=5022&p=web-hosting" target="_blank" rel="sponsored"><img
+                src="https://www.domainking.ng/media/dkng-web-hosting-offer-160-600.png" width="160" height="600"
+                border="0" alt="Reliable Web Hosting in Nigeria by DomainKing.NG"></a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main><!-- End #main -->
 
 
   <!-- ======= Footer ======= -->

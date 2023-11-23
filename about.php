@@ -215,7 +215,7 @@ while($row=mysqli_fetch_array($query))
             <img src="" alt="" class="img-fluid rounded-circle w-50 mb-4">
             <h4></h4>
             <span class="d-block mb-3 text-uppercase"></span>
-            <p>
+            <p></p>
           </div>
           <!--div class="col-lg-4 text-center mb-5">
             <img src="assets/img/usericon.png" alt="" class="img-fluid rounded-circle w-50 mb-4">

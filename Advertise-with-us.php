@@ -2,7 +2,7 @@
 include('includes/config.php');
 
 ?>
- <?php 
+<?php 
 $pagetype='advertise';
 $query=mysqli_query($con,"select PageTitle,Description from tblpages where PageName='$pagetype'");
 while($row=mysqli_fetch_array($query))
@@ -18,7 +18,8 @@ while($row=mysqli_fetch_array($query))
   <title>Publica - <?php echo htmlentities($row['PageTitle'])?><?php }?></title>
   <meta content="Publica is an online multi-media organisation with headquarters in Kano State, Nigeria."
     name="description">
-  <meta content="advertise, sell, gain, News, trending, media, gossip, celebrities, references, tips, videos" name="keywords">
+  <meta content="advertise, sell, gain, News, trending, media, gossip, celebrities, references, tips, videos"
+    name="keywords">
   <meta name="author" content="Publica">
 
   <!-- Favicons -->
@@ -86,11 +87,11 @@ while($row=mysqli_fetch_array($query))
 
   <main id="main">
     <section id="contact" class="contact mb-5">
-      <!--div class="container">
+      <div class="container">
         <div class="row">
-          <div class="col-md-9" data-aos="fade-up"-->
+          <div class="col-md-9" data-aos="fade-up">
 
-            <div class="container" data-aos="fade-up">
+
             <?php 
 $pagetype='advertise';
 $query=mysqli_query($con,"select PageTitle,Description from tblpages where PageName='$pagetype'");
@@ -117,13 +118,16 @@ while($row=mysqli_fetch_array($query))
             <?php } ?>
 
           </div>
-          <!--div class="col-md-3"-->
+          <div class="col-md-3">
             <!-- ======= Sidebar ======= -->
-            
-          <!--/div-->
+            <a href="https://clients.domainking.ng/aff.php?aff=5022&p=web-hosting" target="_blank" rel="sponsored"><img
+                src="https://www.domainking.ng/media/dkng-web-hosting-offer-160-600.png" width="160" height="600"
+                border="0" alt="Reliable Web Hosting in Nigeria by DomainKing.NG"></a>
 
-        <!--/div>
-      </div-->
+          </div>
+
+        </div>
+      </div>
 
     </section>
 

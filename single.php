@@ -163,10 +163,11 @@ while ($row=mysqli_fetch_array($query)) {
 $pt=$row['postdetails'];
               echo  (substr($pt,0));?></p>
 
-
+<a href="https://clients.domainking.ng/aff.php?aff=5022&p=web-hosting" target="_blank" rel="sponsored"><img src="https://www.domainking.ng/media/dkng-web-hosting-offer-wide.png" width="528" height="80" border="0" alt="Reliable Web Hosting in Nigeria by DomainKing.NG"></a>
+         
             </div><!-- End Single Post Content -->
-
-            <?php 
+         
+         <?php 
 $baseUrl="http://localhost/frontpage/single.php?nid="; 
 $slug=$_GET['nid']; 
 $articleIdc=$row['url']; 
@@ -339,7 +340,8 @@ $message=$row['posttitle'];
             $totneworder=mysqli_num_rows($query);
  ?>
   <h5 class="comment-title py-4"><?php echo htmlentities($totneworder);?> Comment</h5>
-             
+  <a href="https://clients.domainking.ng/aff.php?aff=5022&p=domain-registration" target="_blank" rel="sponsored"><img src="https://www.domainking.ng/media/dkng-badge.gif" width="200" height="50" border="0" alt="For Registering Domain Names, I trust DomainKing.NG"></a>   
+                   
  <?php
 while ($row=mysqli_fetch_array($query)) {
 ?>
