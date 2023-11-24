@@ -14,10 +14,11 @@ include('includes/config.php');
   <title>Publica - <?php echo htmlentities($_POST['searchtitle']);?></title>
   <meta content="Publica is an online multi-media organisation with headquarters in Kano State, Nigeria."
     name="description">
-  <meta content="search, engine, super-search, News, trending, media, gossip, celebrities, references, tips, videos" name="keywords">
+  <meta content="search, engine, super-search, News, trending, media, gossip, celebrities, references, tips, videos"
+    name="keywords">
   <meta name="author" content="Publica">
 
- 
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -115,7 +116,7 @@ $st;
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
 
-$query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblcategory.CategoryName as category,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.PostTitle like '%$st%' and tblposts.Is_Active=1 LIMIT $offset, $no_of_records_per_page");
+$query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.PostTitle like '%$st%' and tblposts.Is_Active=1 LIMIT $offset, $no_of_records_per_page");
 
 $rowcount=mysqli_num_rows($query);
 if($rowcount==0)
@@ -129,9 +130,10 @@ while ($row=mysqli_fetch_array($query)) {
 ?>
 
             <div class="d-md-flex post-entry-2 small-img">
-              <!--a href="single-post.html" class="me-4 thumbnail">
-                <img src="assets/img/post-landscape-6.jpg" alt="" class="img-fluid">
-              </a-->
+              <a href="single.php?nid=<?php echo htmlentities($row['pid'])?>" class="me-4 thumbnail">
+                <img src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>" class="img-fluid">
+              </a>
+
               <div>
                 <div class="post-meta"><span class="date"><?php echo htmlentities($row['category']);?></span> <span
                     class="mx-1">&bullet;</span> <span><?php echo htmlentities($row['postingdate']);?></span></div>
@@ -152,7 +154,7 @@ echo  (substr($pt,0,230). '...');?></p>
             <?php } ?>
 
             <!-- Paging -->
-            <div class="text-start py-4">
+            <!--div class="text-start py-4">
               <div class="custom-pagination">
                 <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"
                   class="<?php if($pageno <= 1){ echo 'disabled'; } ?> prev">Prevous</a>
@@ -168,13 +170,14 @@ echo  (substr($pt,0,230). '...');?></p>
                 <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"
                   class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?> next">Next</a>
               </div>
-            </div><!-- End Paging -->
+            </div-->
+            <!-- End Paging -->
             <?php } ?>
           </div>
 
           <div class="col-md-3">
             <!-- ======= Sidebar ======= -->
-            <?php include('includes/sidebar.php');?>                
+            <?php include('includes/sidebar.php');?>
           </div>
 
         </div>

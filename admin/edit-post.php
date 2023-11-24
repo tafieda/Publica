@@ -178,9 +178,6 @@ while($result=mysqli_fetch_array($ret))
     </div>
 </div>
 
-
-
-
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
@@ -237,7 +234,5 @@ include('includes/footer.php');
 
 <!--Summernote js-->
 <script src="../plugins/summernote/summernote.min.js"></script>
-
-
 
 <?php } ?>

@@ -29,12 +29,17 @@ header('location:index.php');
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Popular Posts</div>
               <?php $query=mysqli_query($con,"select * from tblposts where Is_Popular=1");
-$countcat=mysqli_num_rows($query);
-echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countcat,'</div>'        
-
+if ($countcat=mysqli_num_rows($query))
+{
+//echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countpost,'</div>' ;       
 ?>
- <!--span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span-->
-  
+<span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span>
+
+<?php 
+ } else {
+  ?>
+  <span class=" h6 mb-0 font-weight-bold text-gray-800">No Data</span>
+<?php }?>
               </div>
          </div>
       </div>
@@ -48,13 +53,17 @@ echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$cou
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Trending Posts</div>
               <?php $query=mysqli_query($con,"select * from tblposts where Is_Trending=1");
-$countcat=mysqli_num_rows($query);
-echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countcat,'</div>'        
-
+if ($countcat=mysqli_num_rows($query))
+{
+//echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countpost,'</div>' ;       
 ?>
- <!--span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span-->
-  
+<span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span>
 
+<?php 
+ } else {
+  ?>
+  <span class=" h6 mb-0 font-weight-bold text-gray-800">No Data</span>
+<?php }?>
               </div>
             </div>
       </div>
@@ -70,12 +79,17 @@ echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$cou
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Not Popular Posts</div>
               <?php $query=mysqli_query($con,"select * from tblposts where Is_Popular=0");
-$countcat=mysqli_num_rows($query);
-echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countcat,'</div>'        
-
+if ($countcat=mysqli_num_rows($query))
+{
+//echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countpost,'</div>' ;       
 ?>
- <!--span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span-->
-  
+<span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span>
+
+<?php 
+ } else {
+  ?>
+  <span class=" h6 mb-0 font-weight-bold text-gray-800">No Data</span>
+<?php }?>
               </div>
             </div>
       </div>
@@ -90,12 +104,17 @@ echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$cou
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Not Trending Posts</div>
               <?php $query=mysqli_query($con,"select * from tblposts where Is_Trending=0");
-$countcat=mysqli_num_rows($query);
-echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countcat,'</div>'        
-
+if ($countcat=mysqli_num_rows($query))
+{
+//echo '<div class="h6 mb-0 font-weight-bold text-gray-800" data-val="280"> ',$countpost,'</div>' ;       
 ?>
- <!--span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span-->
-  
+<span class="num h6 mb-0 font-weight-bold text-gray-800" data-val="<?php echo $countcat;?>">0</span>
+
+<?php 
+ } else {
+  ?>
+  <span class=" h6 mb-0 font-weight-bold text-gray-800">No Data</span>
+<?php }?>
               </div>
             </div>
       </div>
@@ -111,40 +130,4 @@ include('includes/footer.php');
  
 ?>
 
-    <script>
-        var resizefunc = [];
-    </script>
-
-    <!-- jQuery  -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/detect.js"></script>
-    <script src="assets/js/fastclick.js"></script>
-    <script src="assets/js/jquery.blockUI.js"></script>
-    <script src="assets/js/waves.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="../plugins/switchery/switchery.min.js"></script>
-
-    <!-- CounterUp  -->
-    <script src="../plugins/waypoints/jquery.waypoints.min.js"></script>
-    <script src="../plugins/counterup/jquery.counterup.min.js"></script>
-
-    <!--Morris Chart-->
-    <script src="../plugins/morris/morris.min.js"></script>
-    <script src="../plugins/raphael/raphael-min.js"></script>
-
-    <!-- Load page level scripts-->
-    <script src="../plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../plugins/jvectormap/gdp-data.js"></script>
-    <script src="../plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
-
-
-    <!-- Dashboard Init js -->
-    <script src="assets/pages/jquery.blog-dashboard.js"></script>
-
-    <!-- App js -->
-    <script src="assets/js/jquery.core.js"></script>
-    <script src="assets/js/jquery.app.js"></script>
     <?php } ?>

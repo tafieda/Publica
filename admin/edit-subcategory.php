@@ -34,29 +34,29 @@ $error="Something went wrong . Please try again.";
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-<div class="card shadow mb-4 mb-xl-0">
+    <div class="card shadow mb-4 mb-xl-0">
         <div class="card-header">
             <!-- Page Heading -->
             <h6 class="m-0 font-weight-bold text-primary">Edit Sub Category</h6>
-            
-        <!---Success Message--->
-        <?php if($msg){ ?>
-        <div class="alert alert-success" role="alert">
-            <strong>Well done!</strong> <?php echo htmlentities($msg);?>
+
+            <!---Success Message--->
+            <?php if($msg){ ?>
+            <div class="alert alert-success" role="alert">
+                <strong>Well done!</strong> <?php echo htmlentities($msg);?>
+            </div>
+            <?php } ?>
+
+            <!---Error Message--->
+            <?php if($error){ ?>
+            <div class="alert alert-danger" role="alert">
+                <strong>Oh snap!</strong> <?php echo htmlentities($error);?></div>
+            <?php } ?>
+
+
         </div>
-        <?php } ?>
-
-        <!---Error Message--->
-        <?php if($error){ ?>
-        <div class="alert alert-danger" role="alert">
-            <strong>Oh snap!</strong> <?php echo htmlentities($error);?></div>
-        <?php } ?>
 
 
-    </div>
-
-
-<?php 
+        <?php 
 //fetching Category details
 $subcatid=intval($_GET['scid']);
 $query=mysqli_query($con,"Select tblcategory.CategoryName as catname,tblcategory.id as catid,tblsubcategory.Subcategory as subcatname,tblsubcategory.SubCatDescription as SubCatDescription,tblsubcategory.PostingDate as subcatpostingdate,tblsubcategory.UpdationDate as subcatupdationdate,tblsubcategory.SubCategoryId as subcatid from tblsubcategory join tblcategory on tblsubcategory.CategoryId=tblcategory.id where tblsubcategory.Is_Active=1 and  SubCategoryId='$subcatid'");
@@ -67,72 +67,74 @@ while($row=mysqli_fetch_array($query))
 ?>
 
 
-<div class="card-body">
-<form class="form-horizontal" name="category" method="post">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h6 class="m-0 font-weight-800 text-primary">Category Title</h6>
-    </div>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <select class="form-control" name="category" required>
-            <option value="<?php echo htmlentities($row['catid']);?>"><?php echo htmlentities($row['catname']);?>
-            </option>
-            <?php
+        <div class="card-body">
+            <form class="form-horizontal" name="category" method="post">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h6 class="m-0 font-weight-800 text-primary">Category Title</h6>
+                </div>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <select class="form-control" name="category" required>
+                        <option value="<?php echo htmlentities($row['catid']);?>">
+                            <?php echo htmlentities($row['catname']);?>
+                        </option>
+                        <?php
 // Feching active categories
 $ret=mysqli_query($con,"select id,CategoryName from  tblcategory where Is_Active=1");
 while($result=mysqli_fetch_array($ret))
 {    
 ?>
-            <option value="<?php echo htmlentities($result['id']);?>">
-                <?php echo htmlentities($result['CategoryName']);?></option>
-            <?php } ?>
+                        <option value="<?php echo htmlentities($result['id']);?>">
+                            <?php echo htmlentities($result['CategoryName']);?></option>
+                        <?php } ?>
 
-        </select>
-    </div>
-
-
-
-
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h6 class="m-0 font-weight-800 text-primary">Sub Category</h6>
-    </div>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <input type="text" class="form-control" value="<?php echo htmlentities($row['subcatname']);?>"
-            name="subcategory" required>
-    </div>
-   
+                    </select>
+                </div>
 
 
 
 
 
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h6 class="m-0 font-weight-800 text-primary">Sub Category</h6>
+                </div>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <input type="text" class="form-control" value="<?php echo htmlentities($row['subcatname']);?>"
+                        name="subcategory" required>
+                </div>
 
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h6 class="m-0 font-weight-800 text-primary">Sub Category Description</h6>
-    </div>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <textarea class="form-control" rows="5" name="sucatdescription"
-                required><?php echo htmlentities($row['SubCatDescription']);?></textarea>
+
+
+
+
+
+
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h6 class="m-0 font-weight-800 text-primary">Sub Category Description</h6>
+                </div>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <textarea class="form-control" rows="5" name="sucatdescription"
+                        required><?php echo htmlentities($row['SubCatDescription']);?></textarea>
+                </div>
+
+
+                <?php } ?>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">&nbsp;</label>
+                    <div class="col-md-10">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+                            <button type="submit" class="btn btn-success waves-effect waves-light btn-md"
+                                name="submitsubcat">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
         </div>
-    
-
-    <?php } ?>
-
-    <div class="form-group">
-        <label class="col-md-2 control-label">&nbsp;</label>
-        <div class="col-md-10">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-
-            <button type="submit" class="btn btn-success waves-effect waves-light btn-md" name="submitsubcat">
-                Submit
-            </button>
-            </div>
     </div>
-    </div>
-                                               
-</form>
-</div>
-</div>
 </div>
 
 <?php
@@ -140,26 +142,5 @@ include('includes/scripts.php');
 include('includes/footer.php');
  
 ?>
-
-
-<script>
-    var resizefunc = [];
-</script>
-
-<!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/detect.js"></script>
-<script src="assets/js/fastclick.js"></script>
-<script src="assets/js/jquery.blockUI.js"></script>
-<script src="assets/js/waves.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/jquery.scrollTo.min.js"></script>
-<script src="../plugins/switchery/switchery.min.js"></script>
-
-<!-- App js -->
-<script src="assets/js/jquery.core.js"></script>
-<script src="assets/js/jquery.app.js"></script>
-
 
 <?php } ?>

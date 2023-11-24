@@ -148,6 +148,4 @@ include('includes/footer.php');
 <!--Summernote js-->
 <script src="../plugins/summernote/summernote.min.js"></script>
 
-
-
 <?php } ?>

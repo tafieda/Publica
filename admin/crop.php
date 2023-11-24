@@ -46,32 +46,10 @@ else{
       </div>
       <!-- /.container-fluid -->
 
-
-
-
-
-
-
       <?php
 include('includes/scripts.php');
 include('includes/footer.php');
  
 ?>
 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <script src="components/imgareaselect/scripts/jquery.imgareaselect.js"></script>
-        <script src="build/jquery.awesome-cropper.js"></script>
-        <script>
-          $(document).ready(function () {
-            $('#sample_input').awesomeCropper({
-              width: 200,
-              height: 200,
-              debug: true
-            });
-          });
-        </script>
-       
-
-      <?php } ?>
+<?php } ?>

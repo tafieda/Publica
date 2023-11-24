@@ -37,7 +37,7 @@ $error="Something went wrong . Please try again.";
 
 
         <div class="card-body text-center">
-                    <div class="table-responsive">
+            <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -73,9 +73,9 @@ while($row=mysqli_fetch_array($query))
                             <td><?php echo htmlentities($row['category'])?></td>
                             <td><?php echo htmlentities($row['subcategory'])?></td>
 
-                            <td><a
-                                    href="popular.php?pid=<?php echo htmlentities($row['postid']);?>&&action=unpopular"
-                                    onclick="return confirm('Do you really want to unpopular ?')" title="remove this post from popular"> <i class="fa fa-trash"
+                            <td><a href="popular.php?pid=<?php echo htmlentities($row['postid']);?>&&action=unpopular"
+                                    onclick="return confirm('Do you really want to unpopular ?')"
+                                    title="remove this post from popular"> <i class="fa fa-trash"
                                         style="color: #f05050"></i></a> </td>
                         </tr>
                         <?php } }?>
@@ -84,7 +84,7 @@ while($row=mysqli_fetch_array($query))
                 </table>
             </div>
         </div>
-        </div>
+    </div>
 </div>
 <?php
 include('includes/scripts.php');
@@ -92,40 +92,4 @@ include('includes/footer.php');
  
 ?>
 
-<script>
-    var resizefunc = [];
-</script>
-
-<!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/detect.js"></script>
-<script src="assets/js/fastclick.js"></script>
-<script src="assets/js/jquery.blockUI.js"></script>
-<script src="assets/js/waves.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/jquery.scrollTo.min.js"></script>
-<script src="../plugins/switchery/switchery.min.js"></script>
-
-<!-- CounterUp  -->
-<script src="../plugins/waypoints/jquery.waypoints.min.js"></script>
-<script src="../plugins/counterup/jquery.counterup.min.js"></script>
-
-<!--Morris Chart-->
-<script src="../plugins/morris/morris.min.js"></script>
-<script src="../plugins/raphael/raphael-min.js"></script>
-
-<!-- Load page level scripts-->
-<script src="../plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-<script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<script src="../plugins/jvectormap/gdp-data.js"></script>
-<script src="../plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
-
-
-<!-- Dashboard Init js -->
-<script src="assets/pages/jquery.blog-dashboard.js"></script>
-
-<!-- App js -->
-<script src="assets/js/jquery.core.js"></script>
-<script src="assets/js/jquery.app.js"></script>
 <?php } ?>

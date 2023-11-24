@@ -85,17 +85,11 @@ while($row=mysqli_fetch_array($query))
     </div>
 </div>
 
-
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
  
 ?>
-
-</form>
-<?php } ?>
-
-
 
 <script>
     var resizefunc = [];
@@ -148,6 +142,4 @@ include('includes/footer.php');
 <!--Summernote js-->
 <script src="../plugins/summernote/summernote.min.js"></script>
 
-
-
-<?php } ?>
+<?php } } ?>

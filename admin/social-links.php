@@ -33,7 +33,7 @@ $error="Something went wrong . Please try again.";
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-<div class="card shadow mb-4 mb-xl-0">
+    <div class="card shadow mb-4 mb-xl-0">
         <div class="card-header">
             <!-- Page Heading -->
             <h6 class="m-0 font-weight-bold text-primary">Social Media Handles</h6>
@@ -61,41 +61,44 @@ while($row=mysqli_fetch_array($query))
 
 ?>
 
-<div class="card-body">
-<form name="aboutus" method="post">
-            
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h6 class="m-0 font-weight-800 text-primary">Facebook Account</h6>
-        </div>
-        <figcaption style="color: #f05050">Use example.com instead of https://www.example.com</figcaption>
-        <input type="text" class="form-control" value="<?php echo htmlentities($row['facebook'])?>" name="fb" required>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        </div>
+        <div class="card-body">
+            <form name="aboutus" method="post">
 
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h6 class="m-0 font-weight-800 text-primary">Twitter Account</h6>
-        </div>
-        <figcaption style="color: #f05050">Use example.com instead of https://www.example.com</figcaption>
-        <input type="text" class="form-control" value="<?php echo htmlentities($row['twitter'])?>" name="tw" required>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        </div>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h6 class="m-0 font-weight-800 text-primary">Facebook Account</h6>
+                </div>
+                <figcaption style="color: #f05050">Use example.com instead of https://www.example.com</figcaption>
+                <input type="text" class="form-control" value="<?php echo htmlentities($row['facebook'])?>" name="fb"
+                    required>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                </div>
 
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h6 class="m-0 font-weight-800 text-primary">Instagram Account</h6>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h6 class="m-0 font-weight-800 text-primary">Twitter Account</h6>
+                </div>
+                <figcaption style="color: #f05050">Use example.com instead of https://www.example.com</figcaption>
+                <input type="text" class="form-control" value="<?php echo htmlentities($row['twitter'])?>" name="tw"
+                    required>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                </div>
+
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h6 class="m-0 font-weight-800 text-primary">Instagram Account</h6>
+                </div>
+                <figcaption style="color: #f05050">Use example.com instead of https://www.example.com</figcaption>
+                <input type="text" class="form-control" value="<?php echo htmlentities($row['instagram'])?>" name="ig"
+                    required>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                </div>
+
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update</button>
+                </div>
+
+
+            </form>
         </div>
-        <figcaption style="color: #f05050">Use example.com instead of https://www.example.com</figcaption>
-        <input type="text" class="form-control" value="<?php echo htmlentities($row['instagram'])?>" name="ig" required>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        </div>
-
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update</button>
-</div>
-
-
-    </form>
-</div>
-</div>
+    </div>
 </div>
 <?php
 include('includes/scripts.php');
@@ -104,24 +107,4 @@ include('includes/footer.php');
 ?>
 
 
-<!-- Content Row -->
-
-
-
-
-
-
-
-
-
-
-
-
-<?php } ?>
-
-
-
-
-
-
-<?php } ?>
+<?php } }?>

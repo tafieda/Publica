@@ -93,12 +93,6 @@ include('includes/footer.php');
  
 ?>
 
-</form>
-
-<?php } ?>
-
-
-
 <script>
     var resizefunc = [];
 </script>
@@ -153,4 +147,4 @@ include('includes/footer.php');
 
 
 
-<?php } ?>
+<?php } }?>

@@ -97,26 +97,6 @@ include('includes/footer.php');
  
 ?>
 
-
-<!-- Content Row -->
-
-
-
-
-
-
-
-
-
-
-
-
-<?php } ?>
-
-
-
-
-
 <script>
     var resizefunc = [];
 </script>
@@ -168,6 +148,4 @@ include('includes/footer.php');
 <!--Summernote js-->
 <script src="../plugins/summernote/summernote.min.js"></script>
 
-
-
-<?php } ?>
+<?php } } ?>

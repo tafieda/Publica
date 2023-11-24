@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include('../admin/includes/header.php'); ?>
 
         
         <div class="container">
@@ -19,4 +19,4 @@
          
 </div>
       
-<?php include('includes/footer.php') ?>
+<?php include('../admin/includes/footer.php') ?>

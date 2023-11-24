@@ -10,8 +10,9 @@ $query=mysqli_query($con,"SELECT * FROM tblsubcategory WHERE CategoryId=$id and 
  while($row=mysqli_fetch_array($query))
  {
   ?>
-  <option value="<?php echo htmlentities($row['SubCategoryId']); ?>"><?php echo htmlentities($row['Subcategory']); ?></option>
-  <?php
+<option value="<?php echo htmlentities($row['SubCategoryId']); ?>"><?php echo htmlentities($row['Subcategory']); ?>
+</option>
+<?php
  }
 }
 ?>

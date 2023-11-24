@@ -1,6 +1,0 @@
-#This is 404 Error Page to Show
-
-ErrorDocument 400 /frontpage/admin/400.php
-ErrorDocument 404 /frontpage/admin/404.php
-ErrorDocument 422 /frontpage/admin/422.php
-ErrorDocument 500 /frontpage/admin/500.php
