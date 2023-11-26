@@ -117,6 +117,8 @@ while($row=mysqli_fetch_array($query))
             </div><!-- End Info Item -->
             <?php } ?>
 
+
+
           </div>
           <div class="col-md-3">
             <!-- ======= Sidebar ======= -->

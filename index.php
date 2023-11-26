@@ -194,13 +194,37 @@ while ($row=mysqli_fetch_array($query)) {
                   </h2>
                 </div>
                 <?php }?>
+                <?php  
+         if (isset($_GET['pageno'])) {
+          $pageno = $_GET['pageno'];
+      } else {
+          $pageno = 1;
+      }
+      $no_of_records_per_page = 1;
+      $offset = ($pageno-1) * $no_of_records_per_page;
+
+
+      $total_pages_sql = "SELECT COUNT(*) FROM tblposts";
+      $result = mysqli_query($con,$total_pages_sql);
+      $total_rows = mysqli_fetch_array($result)[0];
+      $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+
+$query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.SubCategoryId='33' and tblposts.Is_Active=1 order by tblposts.id desc LIMIT $offset, $no_of_records_per_page");
+while ($row=mysqli_fetch_array($query)) {
+?>
                 <div class="post-entry-1">
-                  <a href="single-post.html"><img src="assets/img/post-landscape-5.jpg" alt="" class="img-fluid"></a>
-                  <div class="post-meta"><span class="date">Food</span> <span class="mx-1">&bullet;</span> <span>Jul
-                      17th '22</span></div>
-                  <h2><a href="single-post.html">Health Category: How to Avoid Distraction and Stay Focused During Video
-                      Calls?</a></h2>
+                  <a href="single.php?nid=<?php echo htmlentities($row['pid'])?>"><img class="img-fluid"
+                      src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>"
+                      alt="<?php echo htmlentities($row['posttitle']);?>"></a>
+                  <div class="post-meta"><span class="date"><?php echo htmlentities($row['subcategory'])?></span> <span
+                      class="mx-1">&bullet;</span> <span><?php echo ($row['postingdate'])?></span></div>
+                  <h2><a
+                      href="single.php?nid=<?php echo htmlentities($row['pid'])?>"><?php echo htmlentities($row['posttitle'])?></a>
+                  </h2>
                 </div>
+                <?php }?>
+
                 <?php  
          if (isset($_GET['pageno'])) {
           $pageno = $_GET['pageno'];
@@ -263,13 +287,37 @@ while ($row=mysqli_fetch_array($query)) {
                   </h2>
                 </div>
                 <?php }?>
+                <?php  
+         if (isset($_GET['pageno'])) {
+          $pageno = $_GET['pageno'];
+      } else {
+          $pageno = 1;
+      }
+      $no_of_records_per_page = 1;
+      $offset = ($pageno-1) * $no_of_records_per_page;
+
+
+      $total_pages_sql = "SELECT COUNT(*) FROM tblposts";
+      $result = mysqli_query($con,$total_pages_sql);
+      $total_rows = mysqli_fetch_array($result)[0];
+      $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+
+$query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.SubCategoryId='34' and tblposts.Is_Active=1 order by tblposts.id desc LIMIT $offset, $no_of_records_per_page");
+while ($row=mysqli_fetch_array($query)) {
+?>
                 <div class="post-entry-1">
-                  <a href="single-post.html"><img src="assets/img/post-landscape-6.jpg" alt="" class="img-fluid"></a>
-                  <div class="post-meta"><span class="date">Tech</span> <span class="mx-1">&bullet;</span> <span>Mar 1st
-                      '22</span></div>
-                  <h2><a href="single-post.html">Category Tech: 10 Life-Changing Hacks Every Working Mom Should Know</a>
+                  <a href="single.php?nid=<?php echo htmlentities($row['pid'])?>"><img class="img-fluid"
+                      src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>"
+                      alt="<?php echo htmlentities($row['posttitle']);?>"></a>
+                  <div class="post-meta"><span class="date"><?php echo htmlentities($row['subcategory']);?></span> <span
+                      class="mx-1">&bullet;</span> <span><?php echo ($row['postingdate'])?></span></div>
+                  <h2><a
+                      href="single.php?nid=<?php echo htmlentities($row['pid'])?>"><?php echo htmlentities($row['posttitle']);?></a>
                   </h2>
                 </div>
+                <?php }?>
+
                 <?php  
          if (isset($_GET['pageno'])) {
           $pageno = $_GET['pageno'];
