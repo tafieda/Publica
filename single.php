@@ -41,7 +41,7 @@ $error="Something went wrong. Please try again.";
 
 <?php 
 $pid=intval($_GET['nid']);
-$query=mysqli_query($con,"select id, PostTitle, PostDetails from tblposts where id='$pid'");
+$query=mysqli_query($con,"select id, PostTitle, PostUrl, PostDetails from tblposts where id='$pid'");
 while($row=mysqli_fetch_array($query))
 {
   ?>
@@ -56,7 +56,7 @@ while($row=mysqli_fetch_array($query))
   <meta content="<?php 
 $pt=$row['PostDetails'];
               echo  (substr($pt,0,30). '...');?>" name="description">
-  <meta content="breaking, News, trending, media, gossip, celebrities, references, tips, videos" name="keywords">
+  <meta content="<?php echo htmlentities($row['PostUrl']) ;?>, breaking, News, trending, media, gossip, celebrities, references, tips, videos" name="keywords">
   <meta name="author" content="Publica">
 
   <!-- Favicons -->
@@ -168,7 +168,7 @@ $pt=$row['postdetails'];
             </div><!-- End Single Post Content -->
          
          <?php 
-$baseUrl="http://localhost/frontpage/single.php?nid="; 
+$baseUrl="https://www.publica.com.ng/single.php?nid="; 
 $slug=$_GET['nid']; 
 $articleIdc=$row['url']; 
 $message=$row['posttitle']; 
