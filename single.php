@@ -55,7 +55,7 @@ while($row=mysqli_fetch_array($query))
   <title>Publica - <?php echo htmlentities($row['PostTitle']);?></title>
   <meta content="<?php 
 $pt=$row['PostDetails'];
-              echo  (substr($pt,0,30). '...');?>" name="description">
+              echo  (substr($pt,0));?>" name="description">
   <meta content="<?php echo htmlentities($row['PostUrl']) ;?>, breaking, News, trending, media, gossip, celebrities, references, tips, videos" name="keywords">
   <meta name="author" content="Publica">
 
@@ -168,7 +168,7 @@ $pt=$row['postdetails'];
             </div><!-- End Single Post Content -->
          
          <?php 
-$baseUrl="https://www.publica.com.ng/single.php?nid="; 
+$baseUrl="www.publica.com.ng/single.php?nid="; 
 $slug=$_GET['nid']; 
 $articleIdc=$row['url']; 
 $message=$row['posttitle']; 
