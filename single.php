@@ -55,13 +55,13 @@ while($row=mysqli_fetch_array($query))
   <title>Publica - <?php echo htmlentities($row['PostTitle']);?></title>
   <meta content="<?php 
 $pt=$row['PostDetails'];
-              echo  (substr($pt,0,150)...);?>" name="description">
+              echo  (substr($pt,0,150).'...');?>" name="description">
   <meta content="<?php echo htmlentities($row['PostUrl']) ;?>, breaking, News, trending, media, gossip, celebrities, references, tips, videos" name="keywords">
   <meta name="author" content="Publica">
 
   <!-- Favicons -->
   <!--link href="assets/img/favicon.png" rel="icon"-->
-  <link href="<?php echo htmlentities($row['PostImage']) ;?>" rel="icon">
+  <link href="admin/postimages/<?php echo htmlentities($row['PostImage']) ;?>" rel="icon">
   <!--link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"-->
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   
