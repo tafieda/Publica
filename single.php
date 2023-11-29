@@ -41,7 +41,7 @@ $error="Something went wrong. Please try again.";
 
 <?php 
 $pid=intval($_GET['nid']);
-$query=mysqli_query($con,"select id, PostTitle, PostUrl, PostDetails from tblposts where id='$pid'");
+$query=mysqli_query($con,"select id, PostTitle, PostUrl, PostImage, PostDetails from tblposts where id='$pid'");
 while($row=mysqli_fetch_array($query))
 {
   ?>
@@ -60,9 +60,11 @@ $pt=$row['PostDetails'];
   <meta name="author" content="Publica">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <!--link href="assets/img/favicon.png" rel="icon"-->
+  <link href="<?php echo htmlentities($row['PostImage']) ;?>" rel="icon">
+  <!--link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"-->
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -189,7 +191,7 @@ $message=$row['posttitle'];
               </a>
 
               <a target="_blank" class="btn codex-whatsapp"
-                href="https://api.whatsapp.com/send?text=<?php echo urlencode($message) ?>%20<?php echo $baseUrl.$slug.$articleIdc; ?>"> <i
+                href="api.whatsapp.com/send?text=<?php echo urlencode($message) ?>%20<?php echo $baseUrl.$slug.$articleIdc; ?>"> <i
                   class="bi bi-whatsapp"></i>
               </a>
 

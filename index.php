@@ -86,7 +86,7 @@ while ($row=mysqli_fetch_array($query)) {
                       <h2><?php echo htmlentities($row['posttitle']);?></h2>
                       <p><?php 
 $pt=$row['postdetails'];
-              echo  (substr($pt,0,300).'...');?></p>
+              echo  (substr($pt,0,120).'...');?></p>
                     </div>
                   </a>
                 </div>

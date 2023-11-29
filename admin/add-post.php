@@ -39,7 +39,9 @@ $imgnewfile=md5($imgfile).$extension;
 move_uploaded_file($_FILES["postimage"]["tmp_name"],"postimages/".$imgnewfile);
 
 $status=1;
-$query=mysqli_query($con,"insert into tblposts(PostTitle,CategoryId,SubCategoryId,AuthorName,ShortDescrip,PostDetails,PostUrl,Is_Active,PostImage) values('$posttitle','$catid','$subcatid','$authorname','$shortdescrip','$postdetails','$url','$status','$imgnewfile')");
+$pop=0;
+$trnd=0;
+$query=mysqli_query($con,"insert into tblposts(PostTitle,CategoryId,SubCategoryId,AuthorName,ShortDescrip,PostDetails,PostUrl,Is_Active,Is_Popular,Is_Trending,PostImage) values('$posttitle','$catid','$subcatid','$authorname','$shortdescrip','$postdetails','$url','$status','$pop','$trnd','$imgnewfile')");
 if($query)
 {
 $msg="Post successfully added ";
